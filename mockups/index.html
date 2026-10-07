@@ -1,0 +1,1023 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ResumeAI — Dashboard Design Concepts</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    body { font-family: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif; }
+    .font-mono { font-family: 'JetBrains Mono', monospace; }
+    .radial-circle { stroke-dasharray: 283; stroke-linecap: round; transform: rotate(-90deg); transform-origin: 50% 50%; }
+    .radial-circle-84 { stroke-dashoffset: 45.28; }
+  </style>
+</head>
+<body class="bg-slate-900 text-slate-100 min-h-screen">
+
+  <!-- Top Concept Selector Bar -->
+  <header class="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800 px-4 py-3 shadow-lg">
+    <div class="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between gap-3">
+      <div class="flex items-center gap-3">
+        <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-indigo-600 to-blue-500 flex items-center justify-center font-extrabold text-white text-base shadow-md">
+          RA
+        </div>
+        <div>
+          <div class="flex items-center gap-2">
+            <span class="font-bold text-base text-white tracking-tight">ResumeAI</span>
+            <span class="text-xs px-2 py-0.5 rounded-full bg-indigo-500/20 text-indigo-300 border border-indigo-500/30 font-medium">Design Selection Stage</span>
+          </div>
+          <p class="text-xs text-slate-400">Choose your preferred dashboard concept before Phase 1 development</p>
+        </div>
+      </div>
+
+      <!-- Concept Toggle Pills -->
+      <div class="flex items-center bg-slate-900 p-1 rounded-xl border border-slate-800 text-xs font-semibold">
+        <button id="btn-c1" onclick="switchConcept('c1')" class="px-4 py-2 rounded-lg transition-all duration-200 bg-indigo-600 text-white shadow-sm flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-blue-300 animate-pulse"></span>
+          Concept 1: Modern Professional
+        </button>
+        <button id="btn-c2" onclick="switchConcept('c2')" class="px-4 py-2 rounded-lg transition-all duration-200 text-slate-400 hover:text-white flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-purple-400"></span>
+          Concept 2: Modern Dark
+        </button>
+        <button id="btn-c3" onclick="switchConcept('c3')" class="px-4 py-2 rounded-lg transition-all duration-200 text-slate-400 hover:text-white flex items-center gap-1.5">
+          <span class="w-2 h-2 rounded-full bg-emerald-400"></span>
+          Concept 3: Academic / Corporate
+        </button>
+      </div>
+
+      <!-- Quick Action / Selected Indicator -->
+      <div class="hidden lg:flex items-center gap-2 text-xs">
+        <span class="text-slate-400">Viewing:</span>
+        <span id="active-concept-name" class="font-bold text-indigo-400 bg-slate-900 border border-slate-800 px-2.5 py-1 rounded-md">Concept 1 (Modern Professional)</span>
+      </div>
+    </div>
+  </header>
+
+  <!-- CONCEPT 1: MODERN PROFESSIONAL -->
+  <section id="concept-c1" class="transition-opacity duration-300">
+    <div class="bg-indigo-950/40 border-b border-indigo-900/30 px-6 py-2.5 text-xs text-indigo-200 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="font-bold tracking-wide uppercase text-indigo-400">Concept 1 Details:</span>
+        <span>Clean SaaS aesthetic • Light slate background (`#F8FAFC`) • Indigo & Blue accents • Soft elevations • Subtle micro-interactions</span>
+      </div>
+      <span class="text-indigo-400 font-medium">Recommended for Clean Tech Presentation</span>
+    </div>
+
+    <div class="bg-slate-50 text-slate-800 min-h-[90vh] flex">
+      <!-- Left Sidebar -->
+      <aside class="w-64 bg-white border-r border-slate-200 flex flex-col justify-between shrink-0 shadow-sm">
+        <div>
+          <div class="h-16 px-6 flex items-center gap-3 border-b border-slate-100">
+            <div class="w-9 h-9 rounded-xl bg-indigo-600 flex items-center justify-center text-white font-bold text-sm shadow-md shadow-indigo-100">
+              <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path>
+              </svg>
+            </div>
+            <div>
+              <span class="font-bold text-base text-slate-900 tracking-tight">ResumeAI</span>
+              <span class="block text-[11px] text-slate-400 font-medium">NLP Matching System</span>
+            </div>
+          </div>
+
+          <nav class="p-4 space-y-1.5">
+            <p class="px-3 py-1.5 text-[11px] font-bold text-slate-400 uppercase tracking-wider">Main Menu</p>
+            <a href="javascript:void(0)" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-indigo-50 text-indigo-700 font-semibold text-sm transition-colors shadow-xs">
+              <svg class="w-5 h-5 text-indigo-600" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+              <span>Dashboard</span>
+              <span class="ml-auto w-1.5 h-1.5 rounded-full bg-indigo-600"></span>
+            </a>
+            <a href="javascript:void(0)" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-medium text-sm transition-colors">
+              <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+              <span>My Resume</span>
+            </a>
+            <a href="javascript:void(0)" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-medium text-sm transition-colors">
+              <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+              <span>Analyze Resume</span>
+            </a>
+            <a href="javascript:void(0)" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-medium text-sm transition-colors">
+              <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <span>History</span>
+            </a>
+            <a href="javascript:void(0)" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-600 hover:bg-slate-100 hover:text-slate-900 font-medium text-sm transition-colors">
+              <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+              <span>Profile</span>
+            </a>
+          </nav>
+        </div>
+
+        <div class="p-4 border-t border-slate-100 space-y-3">
+          <div class="flex items-center gap-3 px-2">
+            <div class="w-9 h-9 rounded-full bg-indigo-100 text-indigo-700 font-bold flex items-center justify-center text-xs">YM</div>
+            <div class="overflow-hidden">
+              <p class="text-xs font-semibold text-slate-900 truncate">Yash Mihani</p>
+              <p class="text-[11px] text-slate-400 truncate">Candidate</p>
+            </div>
+          </div>
+          <a href="javascript:void(0)" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-500 hover:bg-red-50 hover:text-red-600 text-xs font-semibold transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+            <span>Logout</span>
+          </a>
+        </div>
+      </aside>
+
+      <!-- Main Content Area -->
+      <main class="flex-1 flex flex-col min-w-0">
+        <header class="h-16 bg-white border-b border-slate-200 px-8 flex items-center justify-between shadow-2xs">
+          <div class="flex items-center gap-3">
+            <h1 class="text-lg font-bold text-slate-900">Dashboard</h1>
+            <span class="text-slate-300">/</span>
+            <span class="text-xs text-slate-500 font-medium">Candidate Overview</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-50 text-emerald-700 text-xs font-semibold border border-emerald-200">
+              <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+              MySQL Database Connected
+            </div>
+            <button class="px-3.5 py-1.5 bg-indigo-600 hover:bg-indigo-700 text-white rounded-lg text-xs font-semibold shadow-sm transition-all flex items-center gap-2">
+              <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4v16m8-8H4"></path></svg>
+              <span>New Analysis</span>
+            </button>
+          </div>
+        </header>
+
+        <div class="p-8 space-y-6 overflow-y-auto">
+          <div class="bg-gradient-to-r from-indigo-600 via-indigo-700 to-blue-600 rounded-2xl p-6 text-white shadow-md relative overflow-hidden">
+            <div class="relative z-10 max-w-2xl">
+              <div class="inline-flex items-center gap-1.5 bg-white/15 backdrop-blur-xs px-2.5 py-1 rounded-full text-xs font-medium text-indigo-100 mb-2">
+                <span>⚡ TF-IDF Vectorizer & Cosine Similarity</span>
+              </div>
+              <h2 class="text-2xl font-bold tracking-tight">Welcome back, Yash 👋</h2>
+              <p class="text-indigo-100 text-sm mt-1">
+                Your resume is ready for matching. Paste any job description to evaluate keyword overlap, cosine similarity, and skill gaps.
+              </p>
+            </div>
+          </div>
+
+          <!-- 4 Summary KPI Cards -->
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-shadow">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Resume Status</span>
+                <span class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>
+                </span>
+              </div>
+              <div class="mt-3">
+                <span class="text-xl font-bold text-emerald-600 flex items-center gap-1">✓ Uploaded</span>
+              </div>
+              <p class="text-xs text-slate-500 mt-1 truncate font-medium">Yash_Mihani_Resume.pdf</p>
+              <div class="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+                <span>Skills Detected:</span>
+                <span class="font-bold text-slate-700 bg-slate-100 px-2 py-0.5 rounded-full">14 Skills</span>
+              </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-shadow">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Total Analyses</span>
+                <span class="w-8 h-8 rounded-xl bg-blue-50 text-blue-600 flex items-center justify-center">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 19v-6a2 2 0 00-2-2H5a2 2 0 00-2 2v6a2 2 0 002 2h2a2 2 0 002-2zm0 0V9a2 2 0 012-2h2a2 2 0 012 2v10m-6 0a2 2 0 002 2h2a2 2 0 002-2m0 0V5a2 2 0 012-2h2a2 2 0 012 2v14a2 2 0 01-2 2h-2a2 2 0 01-2-2z"></path></svg>
+                </span>
+              </div>
+              <div class="mt-3"><span class="text-3xl font-extrabold text-slate-900 tracking-tight">5</span></div>
+              <p class="text-xs text-slate-500 mt-1">Processed across job profiles</p>
+              <div class="mt-3 pt-3 border-t border-slate-100 flex items-center justify-between text-[11px] text-slate-500">
+                <span>History:</span>
+                <span class="text-indigo-600 font-semibold hover:underline cursor-pointer">View full log →</span>
+              </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-slate-200 shadow-xs hover:shadow-md transition-shadow">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold text-slate-500 uppercase tracking-wider">Average Match</span>
+                <span class="w-8 h-8 rounded-xl bg-indigo-50 text-indigo-600 flex items-center justify-center">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path></svg>
+                </span>
+              </div>
+              <div class="mt-3 flex items-baseline gap-2">
+                <span class="text-3xl font-extrabold text-slate-900 tracking-tight">78%</span>
+                <span class="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2 py-0.5 rounded-full">Good Match</span>
+              </div>
+              <div class="w-full bg-slate-100 rounded-full h-1.5 mt-3 overflow-hidden">
+                <div class="bg-indigo-600 h-1.5 rounded-full" style="width: 78%"></div>
+              </div>
+              <div class="mt-2 text-[11px] text-slate-400">Mean similarity metric</div>
+            </div>
+
+            <div class="bg-white p-5 rounded-2xl border border-indigo-200 ring-2 ring-indigo-500/10 shadow-xs hover:shadow-md transition-shadow">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold text-indigo-600 uppercase tracking-wider">Latest Match</span>
+                <span class="w-8 h-8 rounded-xl bg-emerald-50 text-emerald-600 flex items-center justify-center">
+                  <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M11.049 2.927c.3-.921 1.603-.921 1.902 0l1.519 4.674a1 1 0 00.95.69h4.915c.969 0 1.371 1.24.588 1.81l-3.976 2.888a1 1 0 00-.363 1.118l1.518 4.674c.3.922-.755 1.688-1.538 1.118l-3.976-2.888a1 1 0 00-1.176 0l-3.976 2.888c-.783.57-1.838-.197-1.538-1.118l1.518-4.674a1 1 0 00-.363-1.118l-3.976-2.888c-.784-.57-.38-1.81.588-1.81h4.914a1 1 0 00.951-.69l1.519-4.674z"></path></svg>
+                </span>
+              </div>
+              <div class="mt-3 flex items-baseline gap-2">
+                <span class="text-3xl font-extrabold text-emerald-600 tracking-tight">84%</span>
+                <span class="text-xs font-bold text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded-full">Strong Match</span>
+              </div>
+              <p class="text-xs text-slate-500 mt-1 truncate">Python Developer</p>
+              <div class="mt-3 pt-3 border-t border-slate-100 text-[11px] text-slate-400">Calculated today via TF-IDF</div>
+            </div>
+          </div>
+
+          <!-- Mid Section: Table & Gauge -->
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2 bg-white rounded-2xl border border-slate-200 shadow-xs overflow-hidden flex flex-col justify-between">
+              <div>
+                <div class="px-6 py-4 border-b border-slate-100 flex items-center justify-between">
+                  <div>
+                    <h3 class="font-bold text-base text-slate-900">Recent Analysis</h3>
+                    <p class="text-xs text-slate-400">Past job descriptions evaluated using NLP cosine similarity</p>
+                  </div>
+                  <span class="text-xs font-semibold text-indigo-600 bg-indigo-50 px-2.5 py-1 rounded-lg">Last 3 evaluated</span>
+                </div>
+                <div class="overflow-x-auto">
+                  <table class="w-full text-left text-sm">
+                    <thead>
+                      <tr class="text-xs font-semibold uppercase tracking-wider text-slate-400 bg-slate-50/75 border-b border-slate-100">
+                        <th class="py-3 px-6">Job Role</th>
+                        <th class="py-3 px-6">Match Score</th>
+                        <th class="py-3 px-6">Recommendation</th>
+                        <th class="py-3 px-6 text-right">Action</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-100">
+                      <tr class="hover:bg-slate-50/80 transition-colors">
+                        <td class="py-4 px-6 font-semibold text-slate-900">
+                          <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-emerald-500"></span>
+                            Python Developer
+                          </div>
+                          <span class="text-xs text-slate-400 font-normal pl-4">5 matched • 1 missing skill</span>
+                        </td>
+                        <td class="py-4 px-6">
+                          <div class="flex items-center gap-3">
+                            <span class="font-bold text-slate-900 text-sm">84%</span>
+                            <div class="w-20 bg-slate-100 rounded-full h-2 overflow-hidden">
+                              <div class="bg-emerald-500 h-2 rounded-full" style="width: 84%"></div>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="py-4 px-6">
+                          <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-emerald-100 text-emerald-800">
+                            🟢 Strong Match
+                          </span>
+                        </td>
+                        <td class="py-4 px-6 text-right">
+                          <button class="text-xs text-indigo-600 hover:text-indigo-800 font-semibold hover:underline">View Details →</button>
+                        </td>
+                      </tr>
+                      <tr class="hover:bg-slate-50/80 transition-colors">
+                        <td class="py-4 px-6 font-semibold text-slate-900">
+                          <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-blue-500"></span>
+                            Machine Learning Engineer
+                          </div>
+                          <span class="text-xs text-slate-400 font-normal pl-4">4 matched • 2 missing skills</span>
+                        </td>
+                        <td class="py-4 px-6">
+                          <div class="flex items-center gap-3">
+                            <span class="font-bold text-slate-900 text-sm">76%</span>
+                            <div class="w-20 bg-slate-100 rounded-full h-2 overflow-hidden">
+                              <div class="bg-blue-600 h-2 rounded-full" style="width: 76%"></div>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="py-4 px-6">
+                          <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-blue-100 text-blue-800">
+                            🔵 Good Match
+                          </span>
+                        </td>
+                        <td class="py-4 px-6 text-right">
+                          <button class="text-xs text-indigo-600 hover:text-indigo-800 font-semibold hover:underline">View Details →</button>
+                        </td>
+                      </tr>
+                      <tr class="hover:bg-slate-50/80 transition-colors">
+                        <td class="py-4 px-6 font-semibold text-slate-900">
+                          <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-amber-500"></span>
+                            Web Developer
+                          </div>
+                          <span class="text-xs text-slate-400 font-normal pl-4">3 matched • 3 missing skills</span>
+                        </td>
+                        <td class="py-4 px-6">
+                          <div class="flex items-center gap-3">
+                            <span class="font-bold text-slate-900 text-sm">58%</span>
+                            <div class="w-20 bg-slate-100 rounded-full h-2 overflow-hidden">
+                              <div class="bg-amber-500 h-2 rounded-full" style="width: 58%"></div>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="py-4 px-6">
+                          <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-bold bg-amber-100 text-amber-800">
+                            🟡 Moderate Match
+                          </span>
+                        </td>
+                        <td class="py-4 px-6 text-right">
+                          <button class="text-xs text-indigo-600 hover:text-indigo-800 font-semibold hover:underline">View Details →</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="p-4 bg-slate-50/60 border-t border-slate-100 flex items-center justify-between text-xs text-slate-500">
+                <span class="italic">Note: Scores represent NLP textual similarity, not hiring probability.</span>
+                <a href="javascript:void(0)" class="text-indigo-600 font-semibold hover:underline">View Complete History (5)</a>
+              </div>
+            </div>
+
+            <!-- Gauge & Skill Badges -->
+            <div class="bg-white rounded-2xl border border-slate-200 shadow-xs p-6 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <h3 class="font-bold text-base text-slate-900">Latest Match Score</h3>
+                  <span class="text-xs px-2 py-0.5 bg-emerald-100 text-emerald-800 rounded font-bold">84%</span>
+                </div>
+                <div class="flex flex-col items-center justify-center my-2">
+                  <div class="relative w-36 h-36 flex items-center justify-center">
+                    <svg class="w-full h-full" viewBox="0 0 100 100">
+                      <circle cx="50" cy="50" r="45" fill="none" stroke="#e2e8f0" stroke-width="8"></circle>
+                      <circle class="radial-circle radial-circle-84" cx="50" cy="50" r="45" fill="none" stroke="#10b981" stroke-width="8"></circle>
+                    </svg>
+                    <div class="absolute flex flex-col items-center justify-center text-center">
+                      <span class="text-3xl font-extrabold text-slate-900">84%</span>
+                      <span class="text-[11px] font-bold text-emerald-600 uppercase tracking-wider">Strong Match</span>
+                    </div>
+                  </div>
+                  <p class="text-xs text-center text-slate-500 mt-2 max-w-xs">Target: <strong class="text-slate-700">Python Developer</strong></p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-slate-100 space-y-3">
+                  <div>
+                    <span class="text-xs font-semibold text-slate-600 flex items-center gap-1.5 mb-1.5">
+                      <span class="text-emerald-500">✓</span> Matched Skills (5):
+                    </span>
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="px-2 py-0.5 rounded-md text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">Python</span>
+                      <span class="px-2 py-0.5 rounded-md text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">SQL</span>
+                      <span class="px-2 py-0.5 rounded-md text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">Machine Learning</span>
+                      <span class="px-2 py-0.5 rounded-md text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">Git</span>
+                      <span class="px-2 py-0.5 rounded-md text-[11px] font-semibold bg-emerald-50 text-emerald-700 border border-emerald-200">NLP</span>
+                    </div>
+                  </div>
+                  <div>
+                    <span class="text-xs font-semibold text-slate-600 flex items-center gap-1.5 mb-1.5">
+                      <span class="text-rose-500">✗</span> Missing Skills (1):
+                    </span>
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="px-2 py-0.5 rounded-md text-[11px] font-semibold bg-rose-50 text-rose-700 border border-rose-200">TensorFlow</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4 pt-3 border-t border-slate-100">
+                <button class="w-full py-2.5 bg-slate-900 hover:bg-slate-800 text-white rounded-xl text-xs font-semibold transition-all">
+                  Run New Comparison →
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Bottom: NLP Pipeline Flow -->
+          <div class="bg-white rounded-2xl border border-slate-200 p-5 shadow-xs">
+            <div class="flex items-center justify-between mb-3">
+              <span class="text-xs font-bold text-slate-500 uppercase tracking-wider">How Our NLP Pipeline Evaluates Matching</span>
+              <span class="text-xs text-indigo-600 font-semibold font-mono">nltk • scikit-learn • tf-idf</span>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-6 gap-2 text-center text-xs">
+              <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-100"><span class="block text-slate-400 font-mono text-[10px]">Step 1</span><span class="font-bold text-slate-700">PDF Text</span></div>
+              <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-100"><span class="block text-slate-400 font-mono text-[10px]">Step 2</span><span class="font-bold text-slate-700">Preprocessing</span></div>
+              <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-100"><span class="block text-slate-400 font-mono text-[10px]">Step 3</span><span class="font-bold text-slate-700">Lemmatize</span></div>
+              <div class="p-2.5 rounded-xl bg-slate-50 border border-slate-100"><span class="block text-slate-400 font-mono text-[10px]">Step 4</span><span class="font-bold text-slate-700">Skill Extract</span></div>
+              <div class="p-2.5 rounded-xl bg-indigo-50 border border-indigo-100"><span class="block text-indigo-400 font-mono text-[10px]">Step 5</span><span class="font-bold text-indigo-700">TF-IDF Vector</span></div>
+              <div class="p-2.5 rounded-xl bg-emerald-50 border border-emerald-100"><span class="block text-emerald-500 font-mono text-[10px]">Step 6</span><span class="font-bold text-emerald-700">Cosine Score</span></div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </section>
+
+  <!-- CONCEPT 2: MODERN DARK -->
+  <section id="concept-c2" class="hidden transition-opacity duration-300">
+    <div class="bg-purple-950/40 border-b border-purple-900/30 px-6 py-2.5 text-xs text-purple-200 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="font-bold tracking-wide uppercase text-purple-400">Concept 2 Details:</span>
+        <span>Developer / AI aesthetic • Deep Obsidian/Zinc background (`#090D16`) • Neon Violet/Cyan accents • Glassmorphism • Glowing metrics</span>
+      </div>
+      <span class="text-purple-400 font-medium">Recommended for Futuristic AI/Tech Look</span>
+    </div>
+
+    <div class="bg-[#090d16] text-slate-200 min-h-[90vh] flex selection:bg-purple-500 selection:text-white">
+      <aside class="w-64 bg-[#0e1322] border-r border-slate-800/80 flex flex-col justify-between shrink-0">
+        <div>
+          <div class="h-16 px-6 flex items-center gap-3 border-b border-slate-800/80">
+            <div class="w-9 h-9 rounded-xl bg-gradient-to-tr from-purple-600 via-indigo-600 to-cyan-400 flex items-center justify-center text-white font-bold text-sm shadow-lg shadow-purple-900/40">
+              ⚡
+            </div>
+            <div>
+              <span class="font-bold text-base text-white tracking-tight flex items-center gap-1.5">
+                ResumeAI <span class="w-1.5 h-1.5 rounded-full bg-cyan-400 animate-ping"></span>
+              </span>
+              <span class="block text-[11px] text-slate-500 font-mono">NLP Engine v1.0</span>
+            </div>
+          </div>
+
+          <nav class="p-4 space-y-1.5">
+            <p class="px-3 py-1.5 text-[10px] font-bold text-slate-500 uppercase tracking-widest font-mono">System Menu</p>
+            <a href="javascript:void(0)" class="flex items-center gap-3 px-3 py-2.5 rounded-xl bg-purple-600/15 text-purple-300 border border-purple-500/30 font-semibold text-sm transition-all shadow-inner">
+              <svg class="w-5 h-5 text-purple-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2V6zM14 6a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2V6zM4 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2H6a2 2 0 01-2-2v-2zM14 16a2 2 0 012-2h2a2 2 0 012 2v2a2 2 0 01-2 2h-2a2 2 0 01-2-2v-2z"></path></svg>
+              <span>Dashboard</span>
+              <span class="ml-auto w-1.5 h-1.5 rounded-full bg-cyan-400 shadow-sm shadow-cyan-400"></span>
+            </a>
+            <a href="javascript:void(0)" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-200 font-medium text-sm transition-all">
+              <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+              <span>My Resume</span>
+            </a>
+            <a href="javascript:void(0)" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-200 font-medium text-sm transition-all">
+              <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+              <span>Analyze Resume</span>
+            </a>
+            <a href="javascript:void(0)" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-200 font-medium text-sm transition-all">
+              <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <span>History</span>
+            </a>
+            <a href="javascript:void(0)" class="flex items-center gap-3 px-3 py-2.5 rounded-xl text-slate-400 hover:bg-slate-800/60 hover:text-slate-200 font-medium text-sm transition-all">
+              <svg class="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+              <span>Profile</span>
+            </a>
+          </nav>
+        </div>
+
+        <div class="p-4 border-t border-slate-800/80 space-y-3 bg-[#0a0e1a]/80">
+          <div class="flex items-center gap-3 px-2">
+            <div class="w-9 h-9 rounded-xl bg-purple-500/20 border border-purple-500/40 text-purple-300 font-bold flex items-center justify-center text-xs">YM</div>
+            <div class="overflow-hidden">
+              <p class="text-xs font-semibold text-slate-200 truncate">Yash Mihani</p>
+              <p class="text-[11px] text-slate-500 truncate font-mono">Candidate ID #042</p>
+            </div>
+          </div>
+          <a href="javascript:void(0)" class="flex items-center gap-2.5 px-3 py-2 rounded-lg text-slate-400 hover:bg-red-950/40 hover:text-red-400 text-xs font-semibold transition-colors">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+            <span>Logout</span>
+          </a>
+        </div>
+      </aside>
+
+      <main class="flex-1 flex flex-col min-w-0">
+        <header class="h-16 bg-[#0e1322]/80 backdrop-blur border-b border-slate-800/80 px-8 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <h1 class="text-lg font-bold text-white tracking-tight">System Dashboard</h1>
+            <span class="text-slate-700">|</span>
+            <span class="text-xs font-mono text-purple-400 bg-purple-950/50 px-2 py-0.5 rounded border border-purple-800/40">model: tfidf-cosine</span>
+          </div>
+          <div class="flex items-center gap-4">
+            <div class="hidden sm:flex items-center gap-2 px-3 py-1.5 rounded-lg bg-emerald-950/50 border border-emerald-800/50 text-emerald-400 text-xs font-mono">
+              <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+              db: mysql.connected
+            </div>
+            <button class="px-3.5 py-1.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:from-purple-500 hover:to-indigo-500 text-white rounded-lg text-xs font-semibold shadow-lg shadow-purple-900/30 transition-all flex items-center gap-2">
+              <span>+ New Analysis</span>
+            </button>
+          </div>
+        </header>
+
+        <div class="p-8 space-y-6 overflow-y-auto">
+          <div class="relative overflow-hidden rounded-2xl bg-gradient-to-r from-purple-950/80 via-slate-900 to-indigo-950/80 border border-purple-500/20 p-6 shadow-xl">
+            <div class="relative z-10 max-w-2xl">
+              <div class="inline-flex items-center gap-2 bg-purple-500/10 border border-purple-500/30 px-2.5 py-1 rounded-full text-xs font-mono text-purple-300 mb-2">
+                <span>⚡ NLP VECTOR ENGINE READY</span>
+              </div>
+              <h2 class="text-2xl font-bold text-white tracking-tight">Welcome back, Yash 👋</h2>
+              <p class="text-slate-300 text-sm mt-1">
+                Your extracted PDF features are loaded. Compare your vector representations against any target job requirements.
+              </p>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="bg-[#111728]/80 rounded-2xl border border-slate-800/80 p-5 shadow-lg hover:border-purple-500/30 transition-all">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono uppercase text-slate-400">Resume Status</span>
+                <span class="w-8 h-8 rounded-xl bg-emerald-500/10 border border-emerald-500/30 text-emerald-400 flex items-center justify-center font-bold">✓</span>
+              </div>
+              <div class="mt-3"><span class="text-xl font-bold text-emerald-400 font-mono">✓ Uploaded</span></div>
+              <p class="text-xs text-slate-400 mt-1 truncate font-mono">Yash_Mihani_Resume.pdf</p>
+              <div class="mt-3 pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-400">
+                <span>Features:</span>
+                <span class="font-mono text-cyan-300 bg-cyan-950/60 border border-cyan-800/40 px-2 py-0.5 rounded">14 Skills</span>
+              </div>
+            </div>
+
+            <div class="bg-[#111728]/80 rounded-2xl border border-slate-800/80 p-5 shadow-lg hover:border-purple-500/30 transition-all">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono uppercase text-slate-400">Analyses Done</span>
+                <span class="w-8 h-8 rounded-xl bg-purple-500/10 border border-purple-500/30 text-purple-400 flex items-center justify-center font-mono">#</span>
+              </div>
+              <div class="mt-3"><span class="text-3xl font-extrabold text-white tracking-tight font-mono">5</span></div>
+              <p class="text-xs text-slate-400 mt-1">Stored in MySQL DB</p>
+              <div class="mt-3 pt-3 border-t border-slate-800 flex items-center justify-between text-[11px] text-slate-400">
+                <span>History:</span>
+                <span class="text-purple-400 font-medium hover:underline cursor-pointer">View table →</span>
+              </div>
+            </div>
+
+            <div class="bg-[#111728]/80 rounded-2xl border border-slate-800/80 p-5 shadow-lg hover:border-purple-500/30 transition-all">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono uppercase text-slate-400">Avg Similarity</span>
+                <span class="w-8 h-8 rounded-xl bg-cyan-500/10 border border-cyan-500/30 text-cyan-400 flex items-center justify-center font-mono">~</span>
+              </div>
+              <div class="mt-3 flex items-baseline gap-2">
+                <span class="text-3xl font-extrabold text-white tracking-tight font-mono">78%</span>
+                <span class="text-xs font-mono text-cyan-300 bg-cyan-950/60 border border-cyan-800/40 px-2 py-0.5 rounded">Good Match</span>
+              </div>
+              <div class="w-full bg-slate-800 rounded-full h-1.5 mt-3 overflow-hidden">
+                <div class="bg-cyan-500 h-1.5 rounded-full" style="width: 78%"></div>
+              </div>
+              <div class="mt-2 text-[11px] text-slate-500 font-mono">cosine avg across profiles</div>
+            </div>
+
+            <div class="bg-[#111728]/80 rounded-2xl border border-purple-500/40 p-5 shadow-lg shadow-purple-950/30">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-mono uppercase text-purple-300">Latest Match</span>
+                <span class="w-8 h-8 rounded-xl bg-purple-500/20 border border-purple-500/40 text-purple-300 flex items-center justify-center">⚡</span>
+              </div>
+              <div class="mt-3 flex items-baseline gap-2">
+                <span class="text-3xl font-extrabold text-emerald-400 tracking-tight font-mono">84%</span>
+                <span class="text-xs font-mono font-bold text-emerald-300 bg-emerald-950/70 border border-emerald-700/50 px-2 py-0.5 rounded">Strong</span>
+              </div>
+              <p class="text-xs text-slate-300 mt-1 truncate">Python Developer</p>
+              <div class="mt-3 pt-3 border-t border-slate-800 text-[11px] text-slate-500 font-mono">Similarity index calculated</div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2 bg-[#111728]/80 rounded-2xl border border-slate-800/80 shadow-xl overflow-hidden flex flex-col justify-between">
+              <div>
+                <div class="px-6 py-4 border-b border-slate-800 flex items-center justify-between">
+                  <div>
+                    <h3 class="font-bold text-base text-white">Recent Analysis Logs</h3>
+                    <p class="text-xs text-slate-400 font-mono">NLP preprocessing & cosine similarity records</p>
+                  </div>
+                  <span class="text-xs font-mono text-purple-400 bg-purple-950/60 border border-purple-800/40 px-2.5 py-1 rounded">3 recent</span>
+                </div>
+                <div class="overflow-x-auto">
+                  <table class="w-full text-left text-sm">
+                    <thead>
+                      <tr class="text-xs font-mono uppercase tracking-wider text-slate-400 bg-[#0d1220] border-b border-slate-800">
+                        <th class="py-3 px-6">Job Profile</th>
+                        <th class="py-3 px-6">Match Score</th>
+                        <th class="py-3 px-6">Classification</th>
+                        <th class="py-3 px-6 text-right">Inspect</th>
+                      </tr>
+                    </thead>
+                    <tbody class="divide-y divide-slate-800/70">
+                      <tr class="hover:bg-slate-800/40 transition-colors">
+                        <td class="py-4 px-6 font-semibold text-white">
+                          <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-emerald-400 shadow-sm shadow-emerald-400"></span>
+                            Python Developer
+                          </div>
+                          <span class="text-xs text-slate-500 font-mono pl-4">5 matched • 1 missing</span>
+                        </td>
+                        <td class="py-4 px-6 font-mono">
+                          <div class="flex items-center gap-3">
+                            <span class="font-bold text-emerald-400 text-sm">84%</span>
+                            <div class="w-20 bg-slate-800 rounded-full h-2 overflow-hidden">
+                              <div class="bg-gradient-to-r from-emerald-500 to-teal-400 h-2 rounded-full" style="width: 84%"></div>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="py-4 px-6">
+                          <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-emerald-950/70 text-emerald-300 border border-emerald-700/50">
+                            🟢 Strong Match
+                          </span>
+                        </td>
+                        <td class="py-4 px-6 text-right">
+                          <button class="text-xs font-mono text-purple-400 hover:text-purple-300 hover:underline">View Vector →</button>
+                        </td>
+                      </tr>
+                      <tr class="hover:bg-slate-800/40 transition-colors">
+                        <td class="py-4 px-6 font-semibold text-white">
+                          <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-cyan-400 shadow-sm shadow-cyan-400"></span>
+                            Machine Learning Engineer
+                          </div>
+                          <span class="text-xs text-slate-500 font-mono pl-4">4 matched • 2 missing</span>
+                        </td>
+                        <td class="py-4 px-6 font-mono">
+                          <div class="flex items-center gap-3">
+                            <span class="font-bold text-cyan-400 text-sm">76%</span>
+                            <div class="w-20 bg-slate-800 rounded-full h-2 overflow-hidden">
+                              <div class="bg-gradient-to-r from-cyan-500 to-blue-500 h-2 rounded-full" style="width: 76%"></div>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="py-4 px-6">
+                          <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-cyan-950/70 text-cyan-300 border border-cyan-700/50">
+                            🔵 Good Match
+                          </span>
+                        </td>
+                        <td class="py-4 px-6 text-right">
+                          <button class="text-xs font-mono text-purple-400 hover:text-purple-300 hover:underline">View Vector →</button>
+                        </td>
+                      </tr>
+                      <tr class="hover:bg-slate-800/40 transition-colors">
+                        <td class="py-4 px-6 font-semibold text-white">
+                          <div class="flex items-center gap-2">
+                            <span class="w-2 h-2 rounded-full bg-amber-400 shadow-sm shadow-amber-400"></span>
+                            Web Developer
+                          </div>
+                          <span class="text-xs text-slate-500 font-mono pl-4">3 matched • 3 missing</span>
+                        </td>
+                        <td class="py-4 px-6 font-mono">
+                          <div class="flex items-center gap-3">
+                            <span class="font-bold text-amber-400 text-sm">58%</span>
+                            <div class="w-20 bg-slate-800 rounded-full h-2 overflow-hidden">
+                              <div class="bg-gradient-to-r from-amber-500 to-yellow-500 h-2 rounded-full" style="width: 58%"></div>
+                            </div>
+                          </div>
+                        </td>
+                        <td class="py-4 px-6">
+                          <span class="inline-flex items-center gap-1 px-2.5 py-1 rounded-full text-xs font-mono font-bold bg-amber-950/70 text-amber-300 border border-amber-700/50">
+                            🟡 Moderate Match
+                          </span>
+                        </td>
+                        <td class="py-4 px-6 text-right">
+                          <button class="text-xs font-mono text-purple-400 hover:text-purple-300 hover:underline">View Vector →</button>
+                        </td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+              <div class="p-4 bg-[#0a0e1a]/80 border-t border-slate-800 flex items-center justify-between text-xs text-slate-400 font-mono">
+                <span>formula: cos(θ) = (A · B) / (||A|| × ||B||)</span>
+                <a href="javascript:void(0)" class="text-purple-400 hover:underline">Full Database Log (5) →</a>
+              </div>
+            </div>
+
+            <!-- Right Gauge & Skills -->
+            <div class="bg-[#111728]/80 rounded-2xl border border-slate-800/80 shadow-xl p-6 flex flex-col justify-between">
+              <div>
+                <div class="flex items-center justify-between mb-4">
+                  <h3 class="font-bold text-base text-white">Latest Cosine Result</h3>
+                  <span class="text-xs font-mono px-2 py-0.5 bg-purple-950 text-purple-300 rounded border border-purple-800">84% SIMILAR</span>
+                </div>
+                <div class="flex flex-col items-center justify-center my-2">
+                  <div class="relative w-36 h-36 flex items-center justify-center">
+                    <svg class="w-full h-full" viewBox="0 0 100 100">
+                      <circle cx="50" cy="50" r="45" fill="none" stroke="#1f293d" stroke-width="8"></circle>
+                      <circle class="radial-circle radial-circle-84" cx="50" cy="50" r="45" fill="none" stroke="#10b981" stroke-width="8"></circle>
+                    </svg>
+                    <div class="absolute flex flex-col items-center justify-center text-center">
+                      <span class="text-3xl font-extrabold text-white font-mono">84%</span>
+                      <span class="text-[10px] font-bold text-emerald-400 uppercase tracking-widest font-mono">STRONG MATCH</span>
+                    </div>
+                  </div>
+                  <p class="text-xs text-center text-slate-400 mt-2 font-mono">Target: <strong class="text-purple-300">Python Developer</strong></p>
+                </div>
+                <div class="mt-4 pt-4 border-t border-slate-800 space-y-3 font-mono">
+                  <div>
+                    <span class="text-xs text-emerald-400 flex items-center gap-1.5 mb-1.5 font-semibold">✓ Matched Skills:</span>
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="px-2 py-0.5 rounded text-[11px] bg-emerald-950/70 text-emerald-300 border border-emerald-700/60">Python</span>
+                      <span class="px-2 py-0.5 rounded text-[11px] bg-emerald-950/70 text-emerald-300 border border-emerald-700/60">SQL</span>
+                      <span class="px-2 py-0.5 rounded text-[11px] bg-emerald-950/70 text-emerald-300 border border-emerald-700/60">ML</span>
+                      <span class="px-2 py-0.5 rounded text-[11px] bg-emerald-950/70 text-emerald-300 border border-emerald-700/60">Git</span>
+                      <span class="px-2 py-0.5 rounded text-[11px] bg-emerald-950/70 text-emerald-300 border border-emerald-700/60">NLP</span>
+                    </div>
+                  </div>
+                  <div>
+                    <span class="text-xs text-rose-400 flex items-center gap-1.5 mb-1.5 font-semibold">✗ Missing Skills:</span>
+                    <div class="flex flex-wrap gap-1.5">
+                      <span class="px-2 py-0.5 rounded text-[11px] bg-rose-950/70 text-rose-300 border border-rose-800/60">TensorFlow</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4 pt-3 border-t border-slate-800">
+                <button class="w-full py-2.5 bg-gradient-to-r from-purple-600 to-indigo-600 hover:opacity-90 text-white rounded-xl text-xs font-mono font-semibold transition-all shadow-md">
+                  Execute Vector Comparison
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-[#111728]/80 rounded-2xl border border-slate-800/80 p-5 shadow-lg">
+            <div class="flex items-center justify-between mb-3 font-mono text-xs">
+              <span class="text-slate-400 uppercase tracking-wider">NLP Pipeline Architecture</span>
+              <span class="text-purple-400">PDF → Tokens → Lemmatization → TF-IDF → Cosine</span>
+            </div>
+            <div class="grid grid-cols-2 md:grid-cols-6 gap-2 text-center text-xs font-mono">
+              <div class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300"><span class="block text-slate-600 text-[10px]">01</span>PDF Extract</div>
+              <div class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300"><span class="block text-slate-600 text-[10px]">02</span>Tokenize</div>
+              <div class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300"><span class="block text-slate-600 text-[10px]">03</span>Stopwords</div>
+              <div class="p-2.5 rounded-xl bg-slate-900 border border-slate-800 text-slate-300"><span class="block text-slate-600 text-[10px]">04</span>Skill Dict</div>
+              <div class="p-2.5 rounded-xl bg-purple-950/60 border border-purple-800/60 text-purple-300"><span class="block text-purple-500 text-[10px]">05</span>TF-IDF Matrix</div>
+              <div class="p-2.5 rounded-xl bg-emerald-950/60 border border-emerald-800/60 text-emerald-300"><span class="block text-emerald-500 text-[10px]">06</span>Cosine Sim</div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </section>
+
+  <!-- CONCEPT 3: CLEAN ACADEMIC / CORPORATE -->
+  <section id="concept-c3" class="hidden transition-opacity duration-300">
+    <div class="bg-emerald-950/40 border-b border-emerald-900/30 px-6 py-2.5 text-xs text-emerald-200 flex items-center justify-between">
+      <div class="flex items-center gap-2">
+        <span class="font-bold tracking-wide uppercase text-emerald-400">Concept 3 Details:</span>
+        <span>Clean Academic / Corporate • Maximum readability • College Viva & Presentation oriented • Clear mathematical callouts • Navy & Emerald accents</span>
+      </div>
+      <span class="text-emerald-400 font-medium">Recommended for College Viva Evaluation</span>
+    </div>
+
+    <div class="bg-slate-100 text-slate-900 min-h-[90vh] flex">
+      <aside class="w-64 bg-slate-900 text-white flex flex-col justify-between shrink-0 shadow-lg">
+        <div>
+          <div class="h-16 px-6 flex items-center gap-3 border-b border-slate-800 bg-slate-950">
+            <div class="w-9 h-9 rounded-lg bg-emerald-600 flex items-center justify-center text-white font-bold text-sm shadow">RA</div>
+            <div>
+              <span class="font-bold text-base text-white tracking-tight">ResumeAI</span>
+              <span class="block text-[11px] text-emerald-400 font-medium">NLP Mini Project</span>
+            </div>
+          </div>
+          <div class="px-5 py-3 bg-slate-800/60 border-b border-slate-800 text-xs">
+            <span class="block text-slate-400 text-[10px] uppercase font-bold tracking-wider">Project Domain</span>
+            <span class="font-semibold text-slate-200">Natural Language Processing</span>
+          </div>
+          <nav class="p-4 space-y-1">
+            <p class="px-3 py-1.5 text-[10px] font-bold text-slate-400 uppercase tracking-wider">Project Navigation</p>
+            <a href="javascript:void(0)" class="flex items-center gap-3 px-3 py-2.5 rounded-lg bg-emerald-700 text-white font-semibold text-sm transition-colors shadow-sm">
+              <svg class="w-5 h-5 text-emerald-200" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 12l2-2m0 0l7-7 7 7M5 10v10a1 1 0 001 1h3m10-11l2 2m-2-2v10a1 1 0 01-1 1h-3m-6 0a1 1 0 001-1v-4a1 1 0 011-1h2a1 1 0 011 1v4a1 1 0 001 1m-6 0h6"></path></svg>
+              <span>Dashboard</span>
+            </a>
+            <a href="javascript:void(0)" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white font-medium text-sm transition-colors">
+              <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12h6m-6 4h6m2 5H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"></path></svg>
+              <span>My Resume</span>
+            </a>
+            <a href="javascript:void(0)" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white font-medium text-sm transition-colors">
+              <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5H7a2 2 0 00-2 2v12a2 2 0 002 2h10a2 2 0 002-2V7a2 2 0 00-2-2h-2M9 5a2 2 0 002 2h2a2 2 0 002-2M9 5a2 2 0 012-2h2a2 2 0 012 2m-6 9l2 2 4-4"></path></svg>
+              <span>Analyze Resume</span>
+            </a>
+            <a href="javascript:void(0)" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white font-medium text-sm transition-colors">
+              <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+              <span>History</span>
+            </a>
+            <a href="javascript:void(0)" class="flex items-center gap-3 px-3 py-2.5 rounded-lg text-slate-300 hover:bg-slate-800 hover:text-white font-medium text-sm transition-colors">
+              <svg class="w-5 h-5 text-slate-400" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z"></path></svg>
+              <span>Profile</span>
+            </a>
+          </nav>
+        </div>
+
+        <div class="p-4 border-t border-slate-800 bg-slate-950 space-y-2">
+          <div class="text-xs">
+            <span class="text-slate-400">Logged in candidate:</span>
+            <p class="font-bold text-white text-sm">Yash</p>
+          </div>
+          <a href="javascript:void(0)" class="inline-flex items-center gap-2 text-xs text-rose-300 hover:text-rose-200 font-semibold pt-1">
+            <svg class="w-3.5 h-3.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 16l4-4m0 0l-4-4m4 4H7m6 4v1a3 3 0 01-3 3H6a3 3 0 01-3-3V7a3 3 0 013-3h4a3 3 0 013 3v1"></path></svg>
+            <span>Logout</span>
+          </a>
+        </div>
+      </aside>
+
+      <main class="flex-1 flex flex-col min-w-0">
+        <header class="h-16 bg-white border-b border-slate-200 px-8 flex items-center justify-between">
+          <div>
+            <h1 class="text-lg font-bold text-slate-800">Candidate Evaluation Portal</h1>
+            <p class="text-xs text-slate-500">TF-IDF Vectorization & Cosine Similarity Dashboard</p>
+          </div>
+          <div class="flex items-center gap-3">
+            <div class="px-3 py-1 bg-slate-100 rounded border border-slate-200 text-xs font-medium text-slate-700">
+              System: <span class="text-emerald-700 font-bold">FastAPI + MySQL</span>
+            </div>
+            <button class="px-3 py-1.5 bg-slate-900 hover:bg-slate-800 text-white rounded text-xs font-semibold">
+              Analyze New Job Description
+            </button>
+          </div>
+        </header>
+
+        <div class="p-8 space-y-6 overflow-y-auto">
+          <div class="bg-white rounded-xl border-l-4 border-emerald-600 border-y border-r border-slate-200 p-5 shadow-xs">
+            <div class="flex items-start justify-between">
+              <div>
+                <h2 class="text-xl font-bold text-slate-900">Welcome back, Yash 👋</h2>
+                <p class="text-sm text-slate-600 mt-1 max-w-2xl">
+                  This academic mini-project analyzes unstructured resume content against job requirements using tokenization, stopword filtering, lemmatization, TF-IDF representation, and cosine angle measurement.
+                </p>
+              </div>
+              <div class="hidden md:block text-right">
+                <span class="text-xs font-bold text-emerald-800 bg-emerald-50 border border-emerald-200 px-3 py-1 rounded-md">
+                  College Viva Demo Ready
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-5">
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-xs">
+              <span class="text-xs font-bold text-slate-500 uppercase tracking-wide">Resume Status</span>
+              <div class="mt-2 flex items-center gap-2"><span class="text-xl font-bold text-emerald-700">✓ Uploaded</span></div>
+              <p class="text-xs text-slate-600 mt-1">Yash_Mihani_Resume.pdf</p>
+              <div class="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-500 flex justify-between">
+                <span>Extracted Skills:</span>
+                <span class="font-bold text-slate-800">14 Detected</span>
+              </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-xs">
+              <span class="text-xs font-bold text-slate-500 uppercase tracking-wide">Number of Analyses</span>
+              <div class="mt-2"><span class="text-3xl font-extrabold text-slate-900">5</span></div>
+              <p class="text-xs text-slate-500 mt-1">Stored records in database</p>
+              <div class="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-500 flex justify-between">
+                <span>Database:</span>
+                <span class="font-bold text-slate-700">MySQL Table: analyses</span>
+              </div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border border-slate-200 shadow-xs">
+              <span class="text-xs font-bold text-slate-500 uppercase tracking-wide">Average Match Score</span>
+              <div class="mt-2 flex items-baseline gap-2">
+                <span class="text-3xl font-extrabold text-slate-900">78%</span>
+                <span class="text-xs font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded">Good Match</span>
+              </div>
+              <div class="w-full bg-slate-200 rounded-full h-2 mt-3">
+                <div class="bg-emerald-600 h-2 rounded-full" style="width: 78%"></div>
+              </div>
+              <div class="mt-2 text-xs text-slate-500">Across 5 evaluated roles</div>
+            </div>
+
+            <div class="bg-white p-5 rounded-xl border-2 border-emerald-600/40 shadow-xs">
+              <span class="text-xs font-bold text-emerald-700 uppercase tracking-wide">Latest Match Score</span>
+              <div class="mt-2 flex items-baseline gap-2">
+                <span class="text-3xl font-extrabold text-emerald-700">84%</span>
+                <span class="text-xs font-bold text-emerald-800 bg-emerald-100 px-2 py-0.5 rounded">Strong Match</span>
+              </div>
+              <p class="text-xs font-medium text-slate-700 mt-1">Role: Python Developer</p>
+              <div class="mt-3 pt-3 border-t border-slate-100 text-xs text-slate-500">Formula: Cosine Similarity Vector Score</div>
+            </div>
+          </div>
+
+          <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            <div class="lg:col-span-2 bg-white rounded-xl border border-slate-200 shadow-xs overflow-hidden">
+              <div class="px-6 py-4 bg-slate-50 border-b border-slate-200 flex items-center justify-between">
+                <div>
+                  <h3 class="font-bold text-base text-slate-900">Recent Analysis Records</h3>
+                  <p class="text-xs text-slate-500">Stored test samples from MySQL database</p>
+                </div>
+                <span class="text-xs font-semibold px-2 py-1 bg-white border border-slate-200 rounded text-slate-700">Sample Test Data</span>
+              </div>
+              <table class="w-full text-left text-sm">
+                <thead>
+                  <tr class="bg-slate-100 text-xs font-bold text-slate-600 border-b border-slate-200">
+                    <th class="py-3 px-6">Job Description Target</th>
+                    <th class="py-3 px-6">Match Score</th>
+                    <th class="py-3 px-6">Recommendation</th>
+                    <th class="py-3 px-6">Action</th>
+                  </tr>
+                </thead>
+                <tbody class="divide-y divide-slate-200">
+                  <tr class="hover:bg-slate-50">
+                    <td class="py-3.5 px-6">
+                      <strong class="text-slate-900">Python Developer</strong>
+                      <div class="text-xs text-slate-500">Matched: Python, SQL, ML, Git, NLP</div>
+                    </td>
+                    <td class="py-3.5 px-6 font-bold text-slate-900">84%</td>
+                    <td class="py-3.5 px-6"><span class="px-2.5 py-1 rounded bg-emerald-100 text-emerald-800 font-bold text-xs border border-emerald-200">Strong Match</span></td>
+                    <td class="py-3.5 px-6 text-xs text-slate-600"><a href="javascript:void(0)" class="text-emerald-700 font-bold hover:underline">View Analysis</a></td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="py-3.5 px-6">
+                      <strong class="text-slate-900">Machine Learning Engineer</strong>
+                      <div class="text-xs text-slate-500">Matched: Python, ML, NLP, Pandas</div>
+                    </td>
+                    <td class="py-3.5 px-6 font-bold text-slate-900">76%</td>
+                    <td class="py-3.5 px-6"><span class="px-2.5 py-1 rounded bg-blue-100 text-blue-800 font-bold text-xs border border-blue-200">Good Match</span></td>
+                    <td class="py-3.5 px-6 text-xs text-slate-600"><a href="javascript:void(0)" class="text-emerald-700 font-bold hover:underline">View Analysis</a></td>
+                  </tr>
+                  <tr class="hover:bg-slate-50">
+                    <td class="py-3.5 px-6">
+                      <strong class="text-slate-900">Web Developer</strong>
+                      <div class="text-xs text-slate-500">Matched: React, HTML, CSS</div>
+                    </td>
+                    <td class="py-3.5 px-6 font-bold text-slate-900">58%</td>
+                    <td class="py-3.5 px-6"><span class="px-2.5 py-1 rounded bg-amber-100 text-amber-800 font-bold text-xs border border-amber-200">Moderate Match</span></td>
+                    <td class="py-3.5 px-6 text-xs text-slate-600"><a href="javascript:void(0)" class="text-emerald-700 font-bold hover:underline">View Analysis</a></td>
+                  </tr>
+                </tbody>
+              </table>
+              <div class="p-4 bg-slate-50 border-t border-slate-200 text-xs text-slate-600">
+                <strong>Academic Clarification:</strong> Match percentage represents textual cosine similarity calculated between TF-IDF document vectors.
+              </div>
+            </div>
+
+            <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs flex flex-col justify-between">
+              <div>
+                <h3 class="font-bold text-base text-slate-900 mb-2">NLP Similarity Metrics</h3>
+                <div class="bg-slate-50 rounded-lg p-3 border border-slate-200 mb-4 font-mono text-xs">
+                  <span class="block text-slate-500 text-[10px] font-bold">COSINE FORMULA</span>
+                  <p class="font-bold text-slate-800 mt-1">cosine(A, B) = (A · B) / (||A|| × ||B||)</p>
+                  <p class="text-slate-600 text-[11px] mt-1">Vector A: Resume TF-IDF<br>Vector B: Job Description TF-IDF</p>
+                </div>
+                <div class="text-center p-4 bg-emerald-50 rounded-lg border border-emerald-200 mb-4">
+                  <span class="text-xs font-bold text-emerald-800 uppercase">Current Match Result</span>
+                  <div class="text-4xl font-extrabold text-emerald-700 my-1">84%</div>
+                  <span class="inline-block px-3 py-0.5 rounded-full bg-emerald-200 text-emerald-900 text-xs font-bold">🟢 Strong Match (80% - 100%)</span>
+                </div>
+                <div class="space-y-3 text-xs">
+                  <div>
+                    <span class="font-bold text-slate-700 block mb-1">Matched Skills (5):</span>
+                    <div class="flex flex-wrap gap-1">
+                      <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 font-medium">✓ Python</span>
+                      <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 font-medium">✓ SQL</span>
+                      <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 font-medium">✓ Machine Learning</span>
+                      <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 font-medium">✓ Git</span>
+                      <span class="px-2 py-0.5 rounded bg-emerald-100 text-emerald-900 font-medium">✓ NLP</span>
+                    </div>
+                  </div>
+                  <div>
+                    <span class="font-bold text-slate-700 block mb-1">Missing Skills (1):</span>
+                    <div class="flex flex-wrap gap-1">
+                      <span class="px-2 py-0.5 rounded bg-rose-100 text-rose-900 font-medium">✗ TensorFlow</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="mt-4 pt-3 border-t border-slate-200">
+                <button class="w-full py-2 bg-emerald-700 hover:bg-emerald-800 text-white rounded text-xs font-bold">
+                  Run Viva Demo Test
+                </button>
+              </div>
+            </div>
+          </div>
+
+          <div class="bg-white rounded-xl border border-slate-200 p-5 shadow-xs">
+            <h4 class="text-xs font-bold uppercase tracking-wider text-slate-600 mb-3">Academic NLP Pipeline Flowchart</h4>
+            <div class="flex flex-wrap items-center justify-between gap-2 text-xs">
+              <span class="px-3 py-1.5 bg-slate-100 rounded border border-slate-200 font-medium">1. PDF Text Extraction</span>
+              <span class="text-slate-400 font-bold">→</span>
+              <span class="px-3 py-1.5 bg-slate-100 rounded border border-slate-200 font-medium">2. Text Cleaning & Lowercase</span>
+              <span class="text-slate-400 font-bold">→</span>
+              <span class="px-3 py-1.5 bg-slate-100 rounded border border-slate-200 font-medium">3. Tokenization & Lemmatization</span>
+              <span class="text-slate-400 font-bold">→</span>
+              <span class="px-3 py-1.5 bg-slate-100 rounded border border-slate-200 font-medium">4. Skill Extraction</span>
+              <span class="text-slate-400 font-bold">→</span>
+              <span class="px-3 py-1.5 bg-slate-100 rounded border border-slate-200 font-medium">5. TF-IDF Representation</span>
+              <span class="text-slate-400 font-bold">→</span>
+              <span class="px-3 py-1.5 bg-emerald-100 text-emerald-800 border border-emerald-300 font-bold">6. Cosine Similarity Score</span>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </section>
+
+  <script>
+    function switchConcept(conceptId) {
+      ['c1', 'c2', 'c3'].forEach(id => {
+        const el = document.getElementById('concept-' + id);
+        const btn = document.getElementById('btn-' + id);
+        if (el) el.classList.add('hidden');
+        if (btn) {
+          btn.classList.remove('bg-indigo-600', 'bg-purple-600', 'bg-emerald-600', 'text-white', 'shadow-sm');
+          btn.classList.add('text-slate-400');
+        }
+      });
+      const target = document.getElementById('concept-' + conceptId);
+      const targetBtn = document.getElementById('btn-' + conceptId);
+      const nameLabel = document.getElementById('active-concept-name');
+      if (target) target.classList.remove('hidden');
+      if (targetBtn) {
+        targetBtn.classList.remove('text-slate-400');
+        targetBtn.classList.add('text-white', 'shadow-sm');
+        if (conceptId === 'c1') {
+          targetBtn.classList.add('bg-indigo-600');
+          if (nameLabel) {
+            nameLabel.innerText = 'Concept 1 (Modern Professional)';
+            nameLabel.className = 'font-bold text-indigo-400 bg-slate-900 border border-slate-800 px-2.5 py-1 rounded-md';
+          }
+        } else if (conceptId === 'c2') {
+          targetBtn.classList.add('bg-purple-600');
+          if (nameLabel) {
+            nameLabel.innerText = 'Concept 2 (Modern Dark)';
+            nameLabel.className = 'font-bold text-purple-400 bg-slate-900 border border-slate-800 px-2.5 py-1 rounded-md';
+          }
+        } else if (conceptId === 'c3') {
+          targetBtn.classList.add('bg-emerald-600');
+          if (nameLabel) {
+            nameLabel.innerText = 'Concept 3 (Academic / Corporate)';
+            nameLabel.className = 'font-bold text-emerald-400 bg-slate-900 border border-slate-800 px-2.5 py-1 rounded-md';
+          }
+        }
+      }
+    }
+  </script>
+</body>
+</html>
